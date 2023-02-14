@@ -7,9 +7,20 @@ group = "com.github.darmsteter"
 version = "0.0.1"
 application {
     mainClass.set("com.github.darmsteter.ApplicationKt")
+}
 
-    val isDevelopment: Boolean = project.ext.has("development")
-    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
+class KtorJvmArgumentsProvider(providers: ProviderFactory) : CommandLineArgumentProvider {
+    private val isDevelopment = providers.gradleProperty("development").map { it.toBoolean() }.orElse(false)
+
+    override fun asArguments(): Iterable<String> {
+        return listOf("-Dio.ktor.development=${isDevelopment.get()}")
+    }
+}
+
+tasks {
+    named<JavaExec>("run") {
+        jvmArgumentProviders += KtorJvmArgumentsProvider(providers)
+    }
 }
 
 repositories {
