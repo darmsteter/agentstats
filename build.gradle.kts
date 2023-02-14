@@ -17,6 +17,10 @@ class KtorJvmArgumentsProvider(providers: ProviderFactory) : CommandLineArgument
     }
 }
 
+kotlin {
+    jvmToolchain(17)
+}
+
 tasks {
     named<JavaExec>("run") {
         jvmArgumentProviders += KtorJvmArgumentsProvider(providers)
