@@ -36,6 +36,7 @@ dependencies {
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.apache)
     implementation(libs.logback.classic)
+    implementation(libs.kotlinx.datetime)
     testImplementation(libs.ktor.server.tests)
     testImplementation(libs.kotlin.tests.junit5)
 }

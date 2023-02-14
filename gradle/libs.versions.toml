@@ -2,6 +2,7 @@
 ktor = "2.2.3"
 kotlin = "1.8.10"
 logback = "1.4.5"
+kotlinx-datetime = "0.4.0"
 
 [libraries]
 ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
@@ -14,6 +15,7 @@ ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-apache = { module = "io.ktor:ktor-client-apache", version.ref = "ktor" }
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 kotlin-tests-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 
 [plugins]
 kotlin-gradle-plugin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
