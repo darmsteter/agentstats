@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.kotlin.gradle.plugin)
+    alias(libs.plugins.kotlin.serialization.plugin)
     alias(libs.plugins.ktor.gradle.plugin)
 }
 
